@@ -13,7 +13,7 @@ function App() {
   }, [items, query]);
   const [counter, setCounter] = useState(filteredItems.length);
 
-  // add item
+  // add item 
   function onSubmit(e) {
     e.preventDefault();
     // reset counter to items length
