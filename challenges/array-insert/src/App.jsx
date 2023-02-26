@@ -21,6 +21,8 @@ function App() {
       ...prevCells.slice(pos),
     ]);
   }
+  // complete string output
+  const completeString = cells.join("");
   return (
     <>
       <main>
@@ -46,6 +48,7 @@ function App() {
             </li>
           ))}
         </ul>
+        <div>{completeString}</div>
       </main>
     </>
   );
