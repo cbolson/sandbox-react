@@ -1,0 +1,54 @@
+main {
+  width: 600px;
+  margin: 2rem auto;
+}
+ol,
+ul {
+  margin: 2rem 0;
+  padding: 0;
+}
+li {
+  margin: 0;
+  padding: 0;
+}
+.cells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+.cells li {
+  position: relative;
+}
+.cell {
+  width: 100%;
+  height: 60px;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: transparent;
+  color: #fff;
+}
+.cell:focus {
+  outline: 3px dashed red;
+}
+.addItem {
+  position: absolute;
+  width: 1rem;
+  right: -1rem;
+  top: 0;
+  height: 100%;
+  background-color: green;
+  border-radius: 5px;
+  display: block;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.addItem:hover {
+  background-color: red;
+}
