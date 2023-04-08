@@ -16,6 +16,8 @@ Build a clock with an hour, minute and second hand that updates in real time.
 
 - Used styled-components "extend" to extend the hour styled element and thus simplify the code.
 - Reduced clock hand styling to just a few custom properties.
+- Add color selection
+- TO DO - custom color insert field
 
 ## Sources
 
