@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   --clock-clr: #121212;
+  --clock-rad: 20vw;
   --center-border: ${(p) => p.theme};
   --hand-clr: ${(p) => p.theme};
+  --num-clr: ${(p) => p.theme};
 
   height: 100vh;
   width: 100vw;
@@ -15,22 +17,24 @@ export const Wrapper = styled.div`
 export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem;
   background: #121212;
 `;
 export const Button = styled.button`
   font-size: 0.8rem;
   background-color: ${(p) => p.value};
   color: #fff;
-  width: 20px;
+  width: 2rem;
 `;
 
 export const Clock = styled.div`
-  height: 400px;
-  width: 400px;
+  width: calc(var(--clock-rad) * 2);
   background: var(--clock-clr);
+
+  aspect-ratio: 1;
   border-radius: 50%;
   position: relative;
   display: grid;
@@ -46,13 +50,10 @@ export const Clock = styled.div`
   }
 `;
 
-export const HourHand = styled.div<{ rotation: number }>`
+export const Hand = styled.div<{ rotation: number }>`
   --hand-h: 100px;
   --hand-w: 5px;
   --degrees: ${(p) => p.rotation}deg;
-
-  height: 1px;
-  width: 1px;
   top: 50%;
   left: 50%;
   position: absolute;
@@ -69,13 +70,33 @@ export const HourHand = styled.div<{ rotation: number }>`
     transform: translateX(-50%);
   }
 `;
-export const MinuteHand = styled(HourHand)`
+export const HourHand = styled(Hand)`
   --hand-clr: ${(p) => p.theme};
-  --hand-h: 150px;
+  --hand-h: calc(var(--clock-rad) - 12vw);
+  --hand-w: 6px;
+`;
+export const MinuteHand = styled(Hand)`
+  --hand-clr: ${(p) => p.theme};
+  --hand-h: calc(var(--clock-rad) - 8vw);
   --hand-w: 3px;
 `;
-export const SecondHand = styled(HourHand)`
+export const SecondHand = styled(Hand)`
   --hand-clr: red;
-  --hand-h: 165px;
+  --hand-h: calc(var(--clock-rad) - 5vw);
   --hand-w: 1px;
+`;
+
+export const Num = styled.div`
+  --angle: calc(${(p) => p.pos} * 360deg / 12);
+  --offset: calc(var(--clock-rad) - 4vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--num-clr);
+  font-size: 0.8rem;
+  translate: -50% -50%; /* center numbers */
+  transform: translate(
+    calc(cos(var(--angle)) * var(--offset)),
+    calc(sin(var(--angle)) * var(--offset))
+  );
 `;
