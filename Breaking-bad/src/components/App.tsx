@@ -26,9 +26,10 @@ function App() {
 
   return (
     <div className='app'>
+      <h1>Breaking Bad logo generator</h1>
       <div className='row'>
         <div className='col'>
-          <label htmlFor=''>1st word</label>
+          <label htmlFor=''>1st Word</label>
           <input
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}></input>

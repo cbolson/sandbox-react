@@ -9,8 +9,13 @@
   --clr: #0f5135;
   width: 400px;
   border: 1px solid var(--clr);
-  padding: 2rem;
+  padding: .5rem 2rem;
   margin-inline: auto;
+}
+.app h1{
+  font-size: 1.2rem;
+  padding:0 0 .5rem;
+  border-bottom:1px solid var(--clr);
 }
 .app button {
   background-color: var(--clr);
