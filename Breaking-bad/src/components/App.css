@@ -1,0 +1,66 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  --clr: #0f5135;
+  width: 400px;
+  border: 1px solid var(--clr);
+  padding: 2rem;
+  margin-inline: auto;
+}
+.app button {
+  background-color: var(--clr);
+  display: block;
+  width: 100%;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 0.5rem;
+  color: #222;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  text-align: left;
+}
+
+.breaking-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.breaking-logo > div {
+  font-size: 6rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.symbol {
+  background: #0f5135;
+  color: #fff;
+}
