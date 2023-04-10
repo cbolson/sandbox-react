@@ -11,6 +11,7 @@ Challenge - create autocomplete
 - Show list of matching countries as you type
 - Each result is clickable to complete the search field
 - No results returned until user has typed at least 3 characters
+- "reset" button to empty search results and search box
 
 ## To add
 
