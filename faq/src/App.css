@@ -1,0 +1,41 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.App {
+  --bdr: goldenrod;
+}
+.App {
+  margin: auto;
+  width: 400px;
+  border: 1px solid var(--bdr);
+  padding: 1rem 2rem;
+}
+.App h1 {
+  border-bottom: 1px solid var(--bdr);
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+.App h2 {
+  font-size: 1rem;
+}
+.faq li {
+  text-align: left;
+}
+.faq li h2 {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+.faq div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 150ms ease-out, padding 150ms;
+}
+.faq div.open {
+  max-height: 500px;
+  transition: max-height 150ms ease-in, padding 50ms;
+  padding: 1rem 0;
+}
