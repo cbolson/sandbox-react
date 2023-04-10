@@ -18,24 +18,40 @@
   font-size: 1.4rem;
   padding-bottom: 1rem;
 }
-.App h2 {
+.App .faq__question {
   font-size: 1rem;
 }
-.faq li {
-  text-align: left;
-}
-.faq li h2 {
-  cursor: pointer;
+.faq {
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-align: left;
 }
-.faq div {
+.faq li .faq__question {
+  text-align: left;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq li .faq__question::after {
+  content: "\276F";
+  transition: all 0.35s;
+  transform-origin: center;
+}
+.faq li.open .faq__question::after {
+  rotate: 90deg;
+}
+.faq li .faq__info {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 150ms ease-out, padding 150ms;
+  padding-inline: 0.5rem;
+  font-size: 0.9rem;
+  transition: max-height 500ms ease-out;
 }
-.faq div.open {
+.faq li.open .faq__info {
   max-height: 500px;
-  transition: max-height 150ms ease-in, padding 50ms;
-  padding: 1rem 0;
+  transition: max-height 1000ms ease-in;
 }
