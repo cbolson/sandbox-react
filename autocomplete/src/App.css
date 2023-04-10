@@ -9,16 +9,42 @@
   margin-inline: auto;
   border: 1px solid green;
 }
+.App h1 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+.App input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 .search {
   border-bottom: 1px solid green;
   padding: 1rem;
 }
+.search-box {
+  position: relative;
+}
+.clear-autocomplete {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  background-color: transparent;
+}
 .list {
   list-style: none;
   margin: 0;
-  padding: 1rem;
+  padding: 0;
   text-align: left;
+  border: 1px solid #eee;
 }
 .list li {
   cursor: pointer;
+  padding: 0.25rem 0.5rem;
+}
+.list li:hover {
+  background-color: rgb(58, 71, 58);
 }

@@ -7,26 +7,45 @@ function App() {
   const [listCountries, setlistCountries] = useState<[]>([]);
 
   useEffect(() => {
+    console.log("checking....");
     setlistCountries(autoComplete(country));
-    console.log(listCountries);
   }, [country]);
+  function clearInput() {
+    setlistCountries([]);
+    setCountry("");
+  }
 
-
+  // function selectResult(str) {
+  //   setlistCountries([]);
+  //   setCountry(str);
+  //   // clear restults list but this is being set again the value has changed...
+  // }
   return (
     <div className='App'>
       <div className='search'>
-        <input
-          type='text'
-          onChange={(e) => setCountry(e.target.value)}
-          value={country}></input>
+        <h1>Type to search countries</h1>
+        <div className='search-box'>
+          <input
+            type='text'
+            onChange={(e) => setCountry(e.target.value)}
+            value={country}
+            placeholder='where do you want to go'></input>
+          <button className='clear-autocomplete' onClick={clearInput}>
+            x
+          </button>
+        </div>
+        {listCountries.length > 0 && (
+          <ul className='list'>
+            {listCountries.map((country, i: number) => (
+              <li
+                key={`c-${i}`}
+                onClick={(e) => setCountry(e.target.innerHTML)}>
+                {country}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      <ul className='list'>
-        {listCountries.map((country, i: number) => (
-          <li key={`c-${i}`} onClick={(e) => setCountry(e.target.innerHTML)}>
-            {country}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
