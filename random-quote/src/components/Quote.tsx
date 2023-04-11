@@ -1,20 +1,26 @@
 import { useState, useEffect } from "react";
 
+// interface quoteProps {
+//   curQuote: {
+//     text: string;
+//     author: string;
+//   };
+// }
 interface quoteProps {
-  quote: {
-    text: string;
-    author: string;
-  };
+  text: string;
+  author: string;
 }
 
-function Quote({ quote }: quoteProps) {
+
+
+function Quote() {
   const [quotes, setQuotes] = useState([]);
-  const [curQuote, setCurQuote] = useState(null);
+  const [curQuote, setCurQuote] = useState<quoteProps>();
+  const numQuotes: number = Object.keys(quotes).length;
 
   // fetch quotes from the api on initial load
   useEffect(() => {
     (async () => {
-      console.log("load data");
       const res = await fetch("https://type.fit/api/quotes");
       const data = await res.json();
       setQuotes(data);
@@ -24,8 +30,7 @@ function Quote({ quote }: quoteProps) {
 
   // get random quote
   function getRandomQuote() {
-    const length = quotes.length;
-    const random = Math.floor(Math.random() * length + 1);
+    const random = Math.floor(Math.random() * numQuotes + 1);
     setCurQuote(quotes[random]);
   }
 
@@ -42,5 +47,4 @@ function Quote({ quote }: quoteProps) {
     </>
   );
 }
-
 export default Quote;
