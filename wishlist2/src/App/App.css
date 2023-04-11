@@ -1,0 +1,55 @@
+.btn {
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.app {
+  width: 400px;
+  margin: auto;
+  border: 1px solid;
+  padding: 2rem;
+  background-color: rgb(29, 22, 19);
+}
+
+.wish-input {
+  border: 0;
+  border-bottom: 1px dashed grey;
+  padding: 0;
+  color: #fff;
+}
+::placeholder {
+  color: grey;
+}
+.wish-input__label {
+  font-weight: 700;
+}
+.wish-input__field {
+  width: 100%;
+  border: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+}
+
+.wish-list {
+  list-style: none;
+  padding: 0;
+}
+.wish-list__item {
+  display: flex;
+  align-items: center;
+}
+.wish-list__item > * + * {
+  margin-left: 1rem;
+}
+.wish-list__item input {
+  width: 2rem;
+  height: 2rem;
+}
+.wish-list__item--done label {
+  text-decoration: line-through;
+}
+.wish-clear {
+}

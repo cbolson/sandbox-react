@@ -41,6 +41,9 @@ function App() {
             value={lastName}></input>
         </div>
       </div>
+      {/* <div className='row'>
+        <button onClick={breakify}>Breakify</button>
+      </div> */}
       <BreakingLogo result={first}></BreakingLogo>
       <BreakingLogo result={last}></BreakingLogo>
     </div>

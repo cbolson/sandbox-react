@@ -12,6 +12,6 @@ export default [
   {
     id: 3,
     title: "Why has web dev got so complicated?",
-    info: "An excellent question! Things used to be so simple before somebody decided that we need all this frameworks and packages.",
+    info: "An excellent question! Things used to be so simple before somebody decided that we need all these frameworks and packages do do basically the same thing that we have been doing for years without all the fuss.",
   },
 ];

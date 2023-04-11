@@ -20,8 +20,9 @@ Coding Challenge Rules:
 
 ## To do
 
-- use JSON array of chemical symbols to then also add their numeric value
+- Convert to use JSON array of chemical symbols to then also add their numeric value
 - Change functionality to create the logo on button click rather than on change.
+- IDEA - Convert to string as opposed to 2 words. Breakify each word in string
 
 ## Sources
 
