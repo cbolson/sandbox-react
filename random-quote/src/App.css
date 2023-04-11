@@ -1,0 +1,38 @@
+.App{
+  display: flex;
+  flex-direction: column;
+}
+.quote {
+  width: 50vw;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+  padding: 2rem 3rem;
+  border: 1px solid #333;
+  position: relative;
+  box-sizing: border-box;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.quote::before {
+  content: "\201E";
+  font-size: 10rem;
+  position: absolute;
+  top: -8rem;
+  left: 1rem;
+  z-index: -1;
+  color: #333;
+  font-family: monospace;
+}
+.author {
+  font-size: 0.8rem;
+  text-align: right;
+  font-style: normal;
+  color: #888;
+}
+.btn {
+  margin: 2rem auto 0;
+  font-size: .8rem;
+}
