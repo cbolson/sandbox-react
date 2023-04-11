@@ -11,4 +11,4 @@ Challenge - show random quote
 
 ## Sources
 
-- (Quotes API)[https://type.fit/api/quotes]
+- [Quotes API](https://type.fit/api/quotes)
