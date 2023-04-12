@@ -13,7 +13,7 @@ Challenge - create autocomplete
 - No results returned until user has typed at least 3 characters
 - "reset" button to empty search results and search box
 - Clear results on focus
-- <a href="https://sandbox.cbolson.com/projects/autocomplete/" target="_blank">Demo</a>
+- <a href="https://sandbox.cbolson.com/projects/react/autocomplete/" target="_blank">Demo</a>
 
 ## To add
 
