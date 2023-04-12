@@ -8,7 +8,7 @@ Challenge - show random quote
 
 - Fetch quotes via API
 - Select random quote on button click
-- [Demo](https://sandbox.cbolson.com/projects/random-quote/index.html){:target="_blank"}
+- [Demo](https://sandbox.cbolson.com/projects/random-quote/index.html){target="\_blank"}
 
 ## Sources
 
