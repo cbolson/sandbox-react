@@ -4,28 +4,31 @@
   padding: 2rem;
   text-align: center;
 }
-.App {
+
+.search {
+  --_bdr-clr: aqua;
+
+  border-bottom: 1px solid green;
+  padding: 1rem 1.5rem;
   width: 300px;
   margin-inline: auto;
-  border: 1px solid green;
-}
-.App h1 {
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
-  padding: 0;
-}
-.App input {
-  padding: 0.5rem 1rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-.search {
-  border-bottom: 1px solid green;
-  padding: 1rem;
+  border: 1px solid var(--_bdr-clr);
 }
 .search-box {
   position: relative;
 }
+.search h1 {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+  padding: 0 0 0.5rem;
+  border-bottom: 1px solid var(--_bdr-clr);
+}
+.search input {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .clear-autocomplete {
   position: absolute;
   right: 10px;
@@ -40,10 +43,16 @@
   padding: 0;
   text-align: left;
   border: 1px solid #eee;
+  /* background-color: #232323;
+  position: absolute;
+  z-index: 1; */
 }
-.list li {
+.list li button {
   cursor: pointer;
   padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
 }
 .list li:hover {
   background-color: rgb(58, 71, 58);

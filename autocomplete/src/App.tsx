@@ -1,33 +1,31 @@
 import { useEffect, useState } from "react";
 import autoComplete from "./utils/autoComplete";
 import "./App.css";
-
+interface Props {
+  country: string;
+}
 function App() {
-  const [country, setCountry] = useState("");
-  const [listCountries, setlistCountries] = useState<[]>([]);
+  const [country, setCountry] = useState<string>("");
+  const [listCountries, setlistCountries] = useState<string[]>([]);
 
   useEffect(() => {
-    console.log("checking....");
     setlistCountries(autoComplete(country));
   }, [country]);
+
   function clearInput() {
     setlistCountries([]);
     setCountry("");
   }
 
-  // function selectResult(str) {
-  //   setlistCountries([]);
-  //   setCountry(str);
-  //   // clear restults list but this is being set again the value has changed...
-  // }
   return (
     <div className='App'>
       <div className='search'>
-        <h1>Type to search countries</h1>
+        <h1>Country Search</h1>
         <div className='search-box'>
           <input
             type='text'
             onChange={(e) => setCountry(e.target.value)}
+            onFocus={(e) => setCountry("")}
             value={country}
             placeholder='where do you want to go'></input>
           <button className='clear-autocomplete' onClick={clearInput}>
@@ -37,10 +35,8 @@ function App() {
         {listCountries.length > 0 && (
           <ul className='list'>
             {listCountries.map((country, i: number) => (
-              <li
-                key={`c-${i}`}
-                onClick={(e) => setCountry(e.target.innerHTML)}>
-                {country}
+              <li key={`c-${i}`}>
+                <button onClick={(e) => setCountry(country)}>{country}</button>
               </li>
             ))}
           </ul>
