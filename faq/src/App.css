@@ -27,19 +27,23 @@
   list-style: none;
   text-align: left;
 }
+.faq__id {
+  color: #666;
+}
 .faq li .faq__question {
   text-align: left;
   cursor: pointer;
   margin: 0;
   padding: 5px 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 .faq li .faq__question::after {
   content: "\276F";
   transition: all 0.35s;
   transform-origin: center;
+  margin-left: auto;
 }
 .faq li.open .faq__question::after {
   rotate: 90deg;
@@ -47,7 +51,7 @@
 .faq li .faq__info {
   max-height: 0;
   overflow: hidden;
-  padding-inline: 0.5rem;
+  padding-inline: 1.5rem;
   font-size: 0.9rem;
   transition: max-height 500ms ease-out;
 }
