@@ -8,7 +8,7 @@ Challenge - show random quote
 
 - Fetch quotes via API
 - Select random quote on button click
-- <a href="https://sandbox.cbolson.com/projects/random-quote/index.html" target="_blank">Demo</a>
+- <a href="https://sandbox.cbolson.com/projects/react/random-quote/" target="_blank">Demo</a>
 
 ## Sources
 
