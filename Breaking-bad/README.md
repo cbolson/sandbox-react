@@ -17,6 +17,7 @@ Coding Challenge Rules:
 
 - Used simple CSS rather than styled-components as they provided no benefit in this use case.
 - Removed "button" as the code is creating the logo on type.
+- <a href="https://sandbox.cbolson.com/projects/breaking-bad/index.html" target="_blank">Demo</a>
 
 ## To do
 
