@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface NumProps {
+  pos: number;
+}
+
 export const Wrapper = styled.div`
   --clock-clr: #121212;
   --clock-rad: 20vw;
@@ -7,7 +11,7 @@ export const Wrapper = styled.div`
   --hand-clr: ${(p) => p.theme};
   --num-clr: ${(p) => p.theme};
 
-  height: 100vh;
+  
   width: 100vw;
   display: flex;
   align-items: center;
@@ -15,13 +19,15 @@ export const Wrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  width: 100%;
+  width: 300px;
+  margin: 10vh auto 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.5rem;
   background: #121212;
+  border-radius:999px;
 `;
 export const Button = styled.button`
   font-size: 0.8rem;
@@ -86,7 +92,7 @@ export const SecondHand = styled(Hand)`
   --hand-w: 1px;
 `;
 
-export const Num = styled.div`
+export const Num = styled.div<NumProps>`
   --angle: calc(${(p) => p.pos} * 360deg / 12);
   --offset: calc(var(--clock-rad) - 4vw);
   position: absolute;
