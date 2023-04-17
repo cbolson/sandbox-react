@@ -1,11 +1,12 @@
-# react-projects
-
-## Some React learning projects
+# React learning projects
 
 ## About
 
-I have finally bitten the bullet and began my long-overdue learning adventure with React.
+My learning adventure with React.
 
-So far it all seems quite straight-forward but I am the first to admit that I am only just beginning.
+## Initial observations:
 
-I am using Vite as the general opinion appears to be that ReactCreate is too slow and bloated.
+- Pretty straight forward. Just away to create bloated JavaScript.
+- Prop handling is clumsy - Having to pass props through every child component seems so redundant
+- For an intelligent framework, why do you have to import everything all the time? If you declare a hook, it should "know" that it needs to import the corresponding files without having to declare them for every component.
+- Typescript just overly complicates it.
