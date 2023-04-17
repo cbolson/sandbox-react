@@ -1,4 +1,7 @@
-export default {
+interface Location {
+  [city: string[]]: string[];
+}
+const Locations: { [country: string]: Location } = {
   Afghanistan: [
     "Herat",
     "Kabul",
@@ -84080,3 +84083,4 @@ export default {
     "Victoria Falls",
   ],
 };
+export default Locations;
