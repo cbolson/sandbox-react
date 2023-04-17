@@ -9,7 +9,7 @@
   --_bdr-clr: aqua;
 
   border-bottom: 1px solid green;
-  padding: 1rem 1.5rem;
+  padding: 2rem 2.5rem;
   width: 300px;
   margin-inline: auto;
   border: 1px solid var(--_bdr-clr);
@@ -43,8 +43,8 @@
   padding: 0;
   text-align: left;
   border: 1px solid #eee;
-  /* background-color: #232323;
-  position: absolute;
+  background-color: #fff;
+  /* position: absolute;
   z-index: 1; */
 }
 .list li button {
