@@ -24,12 +24,17 @@ ul.todo-list li {
 }
 ul.todo-list li span {
   color: green;
+  text-align: right;
+  width: 30px;
 }
 ul.todo-list li.completed {
-  opacity: 0.5;
+  opacity: 0.7;
 }
-ul.todo-list li:hover {
-  scale: 1.1;
+.todo-list input {
+  margin-left: auto;
+}
+ul.todo-list li:not(.completed):hover {
+  scale: 1.02;
 }
 
 .pagination {
@@ -38,13 +43,13 @@ ul.todo-list li:hover {
   gap: 0.25rem;
   margin: 1rem auto;
   justify-content: center;
- 
 }
 .pagination button {
   padding: 0.5rem 0.75rem;
 }
 .pagination button.current {
   background-color: green;
+  color: #fff;
 }
 
 .spinner {

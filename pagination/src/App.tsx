@@ -14,10 +14,14 @@ function App() {
     axios.get(urlApi).then((result) => setTodos(result.data));
   }, []);
 
+  // this function is passed down to the child component so that we can update the sate from the child
+  function handleChange(newValue) {
+    setTodos(newValue);
+  }
   return (
     <div className='App'>
-      <h1>ToDo</h1>
-      {todos ? <TodoList todos={todos} /> : <Loading />}
+      <h1>ToDo with Pagination</h1>
+      {todos ? <TodoList todos={todos} change={handleChange} /> : <Loading />}
     </div>
   );
 }
