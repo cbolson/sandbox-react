@@ -18,9 +18,12 @@ ul.todo-list li {
   text-align: left;
   gap: 1rem;
   padding: 0.5rem 1rem;
-  border: 1px solid orange;
-  margin: 0 0 5px 0;
+  border-radius: 5px;
+  margin: 1rem 0;
   transition: scale 300ms ease-in;
+  background: azure;
+  border: 1px solid #ddd;
+  /* box-shadow: 0 2px 5px 3px #ddd; */
 }
 ul.todo-list li span {
   color: green;
