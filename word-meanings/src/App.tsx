@@ -1,42 +1,32 @@
-import axios from "axios";
-import "./App.css";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
+import Definitions from "./components/Definitions";
 
-const URL_API = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+import "./App.css";
 
 function App() {
-  const [fetchedData, setFetchedData] = useState([]);
-  const [word, setWord] = useState<string>("");
+  const [wordInput, setWordInput] = useState<string>("");
+  const [wordSearch, setWordSearch] = useState<string>("");
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  // process word data retrieved via api
-  useEffect(() => {
-    console.log(fetchedData);
-  }, [fetchedData]);
-
-  // call api only when user submits search
-  function buttonHandler() {
-    const urlApi = URL_API + word;
-    const getData = async () => {
-      const result = await axios.get(urlApi);
-      setFetchedData(result.data);
-    };
-    getData();
+  function handleCLick() {
+    if (inputRef.current) {
+      setWordSearch(inputRef.current.value);
+    }
   }
+  function handleChange(e) {
+    setWordInput(e.target.value);
+  }
+
   return (
     <>
       <h1>Words and their meanings</h1>
       <section className='search-box'>
-        <input
-          type='text'
-          onChange={(e) => setWord(e.target.value)}
-          value={word}
-        />
-        <button onClick={buttonHandler} di sabled={word.length < 1 && true}>
+        <input ref={inputRef} onChange={handleChange} value={wordInput} />
+        <button onClick={handleCLick} disabled={wordInput.length < 1 && true}>
           search
         </button>
       </section>
-
-      <section className='definition'>data to show here....</section>
+      {wordSearch && <Definitions wordSearch={wordSearch} />}
     </>
   );
 }
