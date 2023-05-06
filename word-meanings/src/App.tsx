@@ -19,14 +19,16 @@ function App() {
 
   return (
     <>
-      <h1>Words and their meanings</h1>
-      <section className='search-box'>
-        <input ref={inputRef} onChange={handleChange} value={wordInput} />
-        <button onClick={handleCLick} disabled={wordInput.length < 1 && true}>
-          search
-        </button>
-      </section>
-      {wordSearch && <Definitions wordSearch={wordSearch} />}
+      <main>
+        <h1>Words and their meanings</h1>
+        <section className='search-box'>
+          <input ref={inputRef} onChange={handleChange} value={wordInput} />
+          <button onClick={handleCLick} disabled={wordInput.length < 1 && true}>
+            search
+          </button>
+        </section>
+        {wordSearch && <Definitions wordSearch={wordSearch} />}
+      </main>
     </>
   );
 }

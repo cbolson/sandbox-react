@@ -1,15 +1,14 @@
-#root {
-  --border-clr: orangered;
 
+main{
+--border-clr: orangered;
   max-width: 600px;
   width:600px;
-  margin: 0 auto;
+  margin: 10vh auto;
   padding: 2rem;
   text-align: center;
   border: 1px solid var(--border-clr);
   padding: 0.5rem 1rem;
 }
-
 #root h1{
 font-size: 1.4rem;
 border-bottom: 1px solid var(--border-clr);
@@ -30,4 +29,5 @@ margin-bottom: 1rem;
   padding-block:2rem;
   font-family: 'Courier New', Courier, monospace;
   color: #FFF;
+  text-align: left;
 }
