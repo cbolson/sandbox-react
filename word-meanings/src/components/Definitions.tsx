@@ -5,9 +5,14 @@ const URL_API = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 type wordProps = {
   wordSearch: string;
 };
+interface dataProps{
+  word: string;
+  phonetic: string;
+  meanings: string[];
+}
 
 function Definitions({ wordSearch }: wordProps) {
-  const [fetchedData, setFetchedData] = useState([]);
+  const [fetchedData, setFetchedData] = useState<dataProps[]>([]);
 
   // process word data retrieved via api
   useEffect(() => {
@@ -19,24 +24,21 @@ function Definitions({ wordSearch }: wordProps) {
       setFetchedData(data);
     };
     getData();
-
-    //console.log(fetchedData);
   }, [wordSearch]);
 
   console.log(fetchedData);
   return (
     <ul className='definition'>
-      {fetchedData.map((item, idx) => (
+      {fetchedData.map(({ word, phonetic, meanings }, idx) => (
         <li key={`word-${idx}`}>
-          <strong>{item.word}</strong> ({item.phonetic})
-          {console.log(item.meanings)}
+          <strong>{word}</strong> ({phonetic})
           <ul>
-            {item.meanings.map((m, idm) => (
+            {meanings.map((m, idm) => (
               <li key={`meaning-${idm}`}>
                 {m.partOfSpeech}
                 <ul>
-                  {m.definitions.map((d, idd) => (
-                    <li key={`definition-${idd}`}>{d.definition}</li>
+                  {m.definitions.map(({definition}, idd) => (
+                    <li key={`definition-${idd}`}>{definition}</li>
                   ))}
                 </ul>
               </li>
