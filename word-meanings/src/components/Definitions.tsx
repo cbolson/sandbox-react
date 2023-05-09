@@ -5,11 +5,24 @@ const URL_API = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 type wordProps = {
   wordSearch: string;
 };
-interface dataProps{
+type DefinitionType = {
+  definition: string;
+  synonyms: string[];
+  antonyms: string[];
+};
+
+type MeaningType = {
+  partOfSpeech: string;
+  definitions: DefinitionType[];
+  synonyms: string[];
+  antonyms: string[];
+};
+
+type dataProps = {
   word: string;
   phonetic: string;
-  meanings: string[];
-}
+  meanings: MeaningType[];
+};
 
 function Definitions({ wordSearch }: wordProps) {
   const [fetchedData, setFetchedData] = useState<dataProps[]>([]);
@@ -33,12 +46,12 @@ function Definitions({ wordSearch }: wordProps) {
         <li key={`word-${idx}`}>
           <strong>{word}</strong> ({phonetic})
           <ul>
-            {meanings.map((m, idm) => (
-              <li key={`meaning-${idm}`}>
-                {m.partOfSpeech}
+            {meanings.map(({ definitions, partOfSpeech }, index) => (
+              <li key={`meaning-${index}`}>
+                {partOfSpeech}
                 <ul>
-                  {m.definitions.map(({definition}, idd) => (
-                    <li key={`definition-${idd}`}>{definition}</li>
+                  {definitions.map(({definition},idxd) => (
+                    <li key={`definition-${idxd}`}>{definition}</li>
                   ))}
                 </ul>
               </li>
