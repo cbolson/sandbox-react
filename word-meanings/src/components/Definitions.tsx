@@ -27,7 +27,6 @@ type dataProps = {
 function Definitions({ wordSearch }: wordProps) {
   const [fetchedData, setFetchedData] = useState<dataProps[]>([]);
 
-  // process word data retrieved via api
   useEffect(() => {
     const urlApi = URL_API + wordSearch;
 
